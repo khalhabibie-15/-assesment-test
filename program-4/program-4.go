@@ -26,9 +26,24 @@ func stackLetter(a, b string) string {
 }
 
 func main() {
+	var n int
+	fmt.Scanf("%d", &n)
 
+	resultSlice := []string{}
+	var string1 string
+	var string2 string
 	
-	fmt.Print(stackLetter("JACK", "DANIEL"))
-	fmt.Print(stackLetter("JACK", "DANIEL"))
+
+	i := 0
+	for i < n {
+		fmt.Scanf("%v \n %v", &string1, &string2)
+		resultString := stackLetter(string1, string2)
+		resultSlice =append(resultSlice, resultString)
+		i++
+	}
+
+	for _, string := range resultSlice{
+		fmt.Println(string)
+	}
 
 }

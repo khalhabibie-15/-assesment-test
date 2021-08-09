@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 )
 
 type OperationInputStruct struct {
@@ -42,7 +41,6 @@ func UpdateSlice(operationInputSlice []OperationInputStruct, numberSlice []int) 
 
 	for _, operation := range operationInputSlice {
 		for i := operation.a - 1; i < operation.b; i++ {
-			log.Println(numberSlice[i])
 			numberSlice[i] += operation.k
 		}
 	}

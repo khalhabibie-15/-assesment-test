@@ -43,6 +43,6 @@ func main() {
 
 	string1 = "ada"
 	string2 = "kosong"
-	fmt.Printf("\nString 1 : %s\nString 2 : %s\nResult  : %s ", string1, string2, mergerString(string1, string2))
+	fmt.Printf("\nString 1 : %s\nString 2 : %s\nResult  : %s", string1, string2, mergerString(string1, string2))
 
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
 func stackLetter(a, b string) string {
@@ -25,6 +26,15 @@ func stackLetter(a, b string) string {
 
 }
 
+func IsUpper(s string) bool {
+	for _, r := range s {
+		if !unicode.IsUpper(r) && unicode.IsLetter(r) {
+			return false
+		}
+	}
+	return true
+}
+
 func main() {
 	var n int
 	fmt.Scanf("%d", &n)
@@ -32,17 +42,20 @@ func main() {
 	resultSlice := []string{}
 	var string1 string
 	var string2 string
-	
 
 	i := 0
 	for i < n {
 		fmt.Scanf("%v \n %v", &string1, &string2)
+		if !IsUpper(string1) || !IsUpper(string2) {
+			fmt.Println("WARNING : Please input upper case")
+			return
+		}
 		resultString := stackLetter(string1, string2)
-		resultSlice =append(resultSlice, resultString)
+		resultSlice = append(resultSlice, resultString)
 		i++
 	}
 
-	for _, string := range resultSlice{
+	for _, string := range resultSlice {
 		fmt.Println(string)
 	}
 

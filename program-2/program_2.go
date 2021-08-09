@@ -50,6 +50,7 @@ func main() {
 		slicePair = append(slicePair, Pair{key, value})
 	}
 
+	//sort slice
 	sort.Slice(slicePair, func(i, j int) bool {
 		return slicePair[i].Value > slicePair[j].Value
 	})
